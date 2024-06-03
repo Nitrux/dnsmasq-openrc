@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+description="DHCP and DNS server"
+command="/usr/sbin/dnsmasq"
+command_args="--keep-in-foreground"
+pidfile="/run/dnsmasq/dnsmasq.pid"
+
+depend() {
+    need mountall
+}
+
+start_pre() {
+    if [ ! -d /run/dnsmasq ]; then
+        mkdir -p /run/dnsmasq
+        chown dnsmasq:nogroup /run/dnsmasq
+    fi
+}
+
+start() {
+    ebegin "Starting ${RC_SVCNAME}"
+    start-stop-daemon --start --quiet --pidfile "${pidfile}" --exec "${command}" -- ${command_args}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping ${RC_SVCNAME}"
+    start-stop-daemon --stop --quiet --pidfile "${pidfile}" --exec "${command}"
+    eend $?
+}

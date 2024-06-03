@@ -1,2 +1,8 @@
-# dnsmasq-openrc
-Package to add service script for dnsmasq for OpenRC
+# dnsmasq for OpenRC
+
+Service files to use dnsmasq with Nitrux.
+
+# Issues
+If you find problems with the contents of this repository please create an issue.
+
+©2024 Nitrux Latinoamericana S.C.
