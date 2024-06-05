@@ -2,7 +2,7 @@
 
 description="DHCP and DNS server"
 command="/usr/sbin/dnsmasq"
-command_args="--conf-dir=/etc/dnsmasq.d/,*.conf --keep-in-foreground"
+command_args="--conf-dir=/etc/dnsmasq.d,*.conf --keep-in-foreground"
 pidfile="/run/dnsmasq/dnsmasq.pid"
 
 depend() {
