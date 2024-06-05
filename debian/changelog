@@ -1,3 +1,10 @@
+
+dnsmasq-openrc (0.0.3)  nitrux; urgency=medium
+
+  * Execute dnsmasq with specific parameter to make it load configurations in /etc/dnsmasq.d.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 05 Jun 2024 14:13:00 -0500
+
 dnsmasq-openrc (0.0.2)  nitrux; urgency=medium
 
   * Rebuild package.
